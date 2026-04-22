@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import greenEarth from '../assets/greenearth.jpg'
 
 const Upload = ({ onPredict, loading, onClear }) => {
   const [selectedFile, setSelectedFile] = useState(null)
@@ -57,9 +58,13 @@ const Upload = ({ onPredict, loading, onClear }) => {
               </div>
             ) : (
               <div className="upload-placeholder">
-                <div className="upload-icon">📸</div>
-                <p>Click or drag to upload soil image</p>
-                <small>Supports JPG, PNG, WEBP (Max 10MB)</small>
+                {/* Background image with low opacity */}
+                <div className="bg-image-overlay"></div>
+                <div className="upload-content">
+                  <div className="upload-icon">📸</div>
+                  <p>Click or drag to upload soil image</p>
+                  <small>Supports JPG, PNG, WEBP (Max 10MB)</small>
+                </div>
               </div>
             )}
           </label>
@@ -117,6 +122,7 @@ const Upload = ({ onPredict, loading, onClear }) => {
           overflow: hidden;
           transition: all 0.3s ease;
           background: #fafafa;
+          position: relative;
         }
 
         .upload-label:hover {
@@ -125,9 +131,35 @@ const Upload = ({ onPredict, loading, onClear }) => {
         }
 
         .upload-placeholder {
+          position: relative;
           padding: 3rem 2rem;
           text-align: center;
           color: #666;
+          min-height: 250px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+        }
+
+        /* Background image overlay - FIXED */
+        .bg-image-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: url(${greenEarth});
+          background-size: auto 120%;
+          background-position: center;
+          background-repeat: no-repeat;
+          opacity: 0.25; /* Low opacity for subtle visibility */
+          z-index: 0;
+        }
+
+        .upload-content {
+          position: relative;
+          z-index: 1;
         }
 
         .upload-icon {

@@ -69,7 +69,7 @@ function App() {
   return (
     <div className="app">
       <div className="container">
-        <h1>🌱 Soil Classification System</h1>
+        <h1>Earth-intel 🌍🌱</h1>
         <p className="subtitle">Upload a soil image to identify its type and get crop recommendations</p>
         
         {error && <div className="error-message">⚠️ {error}</div>}
