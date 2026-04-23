@@ -11,7 +11,7 @@
 
 ## Run server
 
-      python main.py
+      python index.py
 
 
 #*# Start a React App - frontend dir
