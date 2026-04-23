@@ -1,4 +1,4 @@
-const BASE_URL = "http://127.0.0.1:5000";
+const BASE_URL = "https://earth-intel.onrender.com";
 
 export const predictSoil = async (file) => {
   const formData = new FormData();
@@ -9,9 +9,6 @@ export const predictSoil = async (file) => {
     body: formData,
   });
 
-  if (!response.ok) {
-    throw new Error("Prediction failed");
-  }
-
-  return await response.json();
+  const data = await response.json();
+  return data;
 };

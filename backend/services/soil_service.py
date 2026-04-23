@@ -5,9 +5,10 @@ from utils.preprocess import preprocess_image
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
-MODEL_PATH = "models/soil_model.h5"
-LABELS_PATH = "models/labels.json"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+MODEL_PATH = os.path.join(BASE_DIR, "../models/soil_model.h5")
+LABELS_PATH = os.path.join(BASE_DIR, "../models/labels.json")
 model = None
 
 def get_model():
