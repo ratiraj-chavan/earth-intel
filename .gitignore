@@ -8,7 +8,6 @@ env/
 node_modules/
 
 # Model artifacts
-*.h5
 *.sav
 
 .DS_Store
