@@ -1,6 +1,7 @@
+# render.yaml
 services:
   - type: web
     name: soil-backend
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python main.py
+    startCommand: gunicorn index:app --bind 0.0.0.0:$PORT --timeout 120
