@@ -41,7 +41,7 @@ function App() {
     formData.append('file', file)
 
     try {
-      const response = await fetch('https://earth-intel.onrender.com', {
+      const response = await fetch('https://earth-intel.onrender.com/predict', {
         method: 'POST',
         body: formData,
       })
