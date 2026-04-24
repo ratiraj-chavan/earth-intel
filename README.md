@@ -18,3 +18,6 @@
     npm install
     npm run dev
 
+#verions 
+TF: 2.21.0
+Keras: 3.14.0

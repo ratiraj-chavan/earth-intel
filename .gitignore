@@ -9,7 +9,7 @@ node_modules/
 
 # Model artifacts
 *.sav
-
+*.h5
 .DS_Store
 
 model_training
