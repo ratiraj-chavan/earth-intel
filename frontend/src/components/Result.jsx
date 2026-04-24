@@ -4,7 +4,7 @@ const Result = ({ prediction }) => {
   // Format confidence as percentage using safe checks
   const confidenceValue = typeof prediction?.confidence === 'number' ? prediction.confidence : 0
   const confidencePercent = (confidenceValue * 100).toFixed(1)
-  const isLowConfidence = confidenceValue < 0.65
+  const isLowConfidence = confidenceValue < 0.55
 
   // Get color for confidence bar
   const getConfidenceColor = () => {
